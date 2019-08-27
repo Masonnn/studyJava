@@ -8,10 +8,10 @@ public class InputFromConsole {
 
         String string = in.nextLine();
 
-        System.out.println(string+"，你好。请问你几岁了？");
+        System.out.println(string + "，你好。请问你几岁了？");
 
         int age = in.nextInt();
 
-        System.out.println("好的，"+string+age+"岁了。");
+        System.out.println("好的，" + string + age + "岁了。");
     }
 }

@@ -53,7 +53,7 @@ public class GuessNumber {
                 }
 
                 if (guessNum <= rangeStart || guessNum >= rangeEnd) {
-                    System.out.println("请输入在" + rangeStart + "到" + rangeEnd + "之间，的数字，不包括这两个数。");
+                    System.out.println("请输入在" + rangeStart + "到" + rangeEnd + "之间的数字，不包括这两个数。");
                     continue;
                 }
                 // 只要至少猜过一次，就算玩过了。
