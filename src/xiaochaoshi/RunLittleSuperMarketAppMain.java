@@ -31,7 +31,9 @@ public class RunLittleSuperMarketAppMain {
             m.purchasePrice = Math.random() * 100;
             m.soldPrice = m.purchasePrice * (1 + Math.random());
             m.id = "ID" + i;
+            m.madeIn = "China" + i;
             all[i] = m;
+//            m.describle();
         }
 
         System.out.println("营业中，欢迎光临……");
@@ -118,6 +120,10 @@ public class RunLittleSuperMarketAppMain {
 
             System.out.println("是否继续营业？");
             open = in.nextBoolean();
+            if (open != true) {
+                System.out.println("输入错误，退出");
+                open = false;
+            }
         }
 
         System.out.println("超市关门了！");
@@ -134,6 +140,10 @@ public class RunLittleSuperMarketAppMain {
             }
 
         }
+
+        System.out.println("下面有请利润最高的商品做自我介绍");
+        // >> TODO 返回值可以直接使用，不必赋值给一个变量再使用。
+        littleSuperMarket.getBiggestProfitMerchdise().describle();
 
     }
 }
