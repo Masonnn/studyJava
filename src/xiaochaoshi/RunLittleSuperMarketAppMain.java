@@ -2,7 +2,7 @@ package xiaochaoshi;
 
 import xiaochaoshi.person.Customer;
 import xiaochaoshi.supermarket.LittleSuperMarket;
-import xiaochaoshi.supermarket.Merchandise;
+import xiaochaoshi.supermarket.MerchandiseV2;
 
 import java.util.Scanner;
 
@@ -15,17 +15,17 @@ public class RunLittleSuperMarketAppMain {
         littleSuperMarket.address = "武圣路";
         littleSuperMarket.parkingCount = 10;
         //
-        littleSuperMarket.merchandises = new Merchandise[100];
+        littleSuperMarket.merchandises = new MerchandiseV2[100];
         //
         littleSuperMarket.merchandiseSold = new int[littleSuperMarket.merchandises.length];
 
         //
-        Merchandise[] all = littleSuperMarket.merchandises;
+        MerchandiseV2[] all = littleSuperMarket.merchandises;
 
 
         for (int i = 0; i < all.length; i++) {
             //
-            Merchandise m = new Merchandise();
+            MerchandiseV2 m = new MerchandiseV2();
             m.name = "商品" + i;
             m.count = 100;
             m.purchasePrice = Math.random() * 100;
@@ -35,6 +35,10 @@ public class RunLittleSuperMarketAppMain {
             all[i] = m;
 //            m.describle();
         }
+
+        // 每满2件商品，第二件商品半价
+
+
 
         System.out.println("营业中，欢迎光临……");
         boolean open = true;
@@ -86,7 +90,7 @@ public class RunLittleSuperMarketAppMain {
                 }
 
                 // 商品有，问顾客要购买多少个
-                Merchandise toBuy = littleSuperMarket.merchandises[merchandiseId];
+                MerchandiseV2 toBuy = littleSuperMarket.merchandises[merchandiseId];
                 System.out.println(toBuy.name + "单价" + toBuy.soldPrice + "。请问您买几个？");
 
                 int numToBuy = in.nextInt();
@@ -133,7 +137,7 @@ public class RunLittleSuperMarketAppMain {
         for (int i = 0; i < littleSuperMarket.merchandiseSold.length; i++) {
             int sold = littleSuperMarket.merchandiseSold[i];
             if (sold > 0) {
-                Merchandise m = littleSuperMarket.merchandises[i];
+                MerchandiseV2 m = littleSuperMarket.merchandises[i];
                 double netIncoming = sold * (m.soldPrice - m.purchasePrice);
                 double incoming = sold * m.soldPrice;
                 System.out.println(littleSuperMarket.merchandises[i].name + "售出" + sold + "个。销售额" + incoming + "。毛利润" + netIncoming);
@@ -143,7 +147,7 @@ public class RunLittleSuperMarketAppMain {
 
         System.out.println("下面有请利润最高的商品做自我介绍");
         // >> TODO 返回值可以直接使用，不必赋值给一个变量再使用。
-        littleSuperMarket.getBiggestProfitMerchdise().describle();
+        littleSuperMarket.getBiggestProfitMerchandise().describe();
 
     }
 }
