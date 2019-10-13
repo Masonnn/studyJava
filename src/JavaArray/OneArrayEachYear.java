@@ -73,9 +73,5 @@ public class OneArrayEachYear {
         int scoreIndex = scanner.nextInt() - 1;
 
         System.out.println("第" + year + "年的" + names[scoreIndex] + "成绩是：" + yearToUse[scoreIndex]);
-
-
-
-
     }
 }
