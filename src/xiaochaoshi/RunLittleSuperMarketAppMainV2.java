@@ -49,12 +49,12 @@ public class RunLittleSuperMarketAppMainV2 {
             int count = scanner.nextInt();
 
             MerchandiseV2 m = littleSuperMarket.merchandises[index];
-            System.out.println("用户选择的商品是超市里价格最高的" + m.isTheBiggestTotalValueOne(littleSuperMarket));
+            System.out.println("用户选择的商品是超市里价格最高的 " + m.isTheBiggestTotalValueOne(littleSuperMarket));
 
             double totalCost = m.buyAndPrintLeft(count, true);
 
             boolean m0BiggerThan = m0.totalValueBiggerThan(m);
-            System.out.println("m0的总价值比用户选择的要大：" + m0BiggerThan);
+            System.out.println("m0的总价值比用户选择的要大： " + m0BiggerThan);
 
 
             System.out.println("商品总价为：" + totalCost);

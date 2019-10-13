@@ -76,15 +76,15 @@ public class MerchandiseV2 {
 
     // >> TODO 参数可以是任何类型，包括自定义类型，甚至是自己的类型都没问题
     public boolean totalValueBiggerThan(MerchandiseV2 merchandiseV2) {
-        return count * purchasePrice > merchandiseV2.purchasePrice * merchandiseV2.count;
+        return count * soldPrice > merchandiseV2.soldPrice * merchandiseV2.count;
     }
 
     // >> TODO 参数可以是任何类型，包括自定义类型
     public boolean isTheBiggestTotalValueOne(LittleSuperMarket littleSuperMarket){
-        double totalValue = count * purchasePrice;
+        double totalValue = count * soldPrice;
         for (int i = 0; i<littleSuperMarket.merchandises.length;i++){
             MerchandiseV2 m = littleSuperMarket.merchandises[i];
-            double newTotalValue = m.count * m.purchasePrice;
+            double newTotalValue = m.count * m.soldPrice;
             if (totalValue < newTotalValue){
                 // 执行到return的时候，方法直接结束，不管是不是在循环中，是在第几层循环中。
                 return false;

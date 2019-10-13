@@ -1,6 +1,6 @@
 package JavaArray;
 
-import org.junit.Test;
+        import org.junit.Test;
 
 public class AssignArray {
     public static void main(String[] args) {
