@@ -1,28 +1,25 @@
-package Lesson48_this;
+package Lesson48_this.superMarket.mockThis;
 
-import Lesson48_this.superMarket.LittleSuperMarket;
-import Lesson48_this.superMarket.MerchandiseV2;
-
-public class RunLittleSuperMarketMainApp {
+public class RunLittleSuperMarketWithMockThisMerchandiseAppMain {
     public static void main(String[] args) {
         // 创建一个小超市类
-        LittleSuperMarket littleSuperMarket = new LittleSuperMarket();
+        LittleSuperMarketWithMerchandiseMock littleSuperMarket = new LittleSuperMarketWithMerchandiseMock();
         // 依次给超市的名字，地址，停车位赋值
         littleSuperMarket.superMarketName = "有家小超市";
         littleSuperMarket.address = "浦东新区世纪大道666号";
         littleSuperMarket.parkingCount = 100;
         // 给超市200种商品
-        littleSuperMarket.merchandises = new MerchandiseV2[200];
+        littleSuperMarket.merchandises = new MerchandiseV2MockThis[200];
         // 统计用的数组
         littleSuperMarket.merchandiseSold = new int[littleSuperMarket.merchandises.length];
 
         // 为了使用方便，创建一个商品数组引用，和littleSuperMarket.merchandises指向同一个数组对象
-        MerchandiseV2[] all = littleSuperMarket.merchandises;
+        MerchandiseV2MockThis[] all = littleSuperMarket.merchandises;
 
         // 遍历并给200种商品赋值
         for (int i = 0; i < all.length; i++) {
             // 创建并给商品的属性赋值
-            MerchandiseV2 m = new MerchandiseV2();
+            MerchandiseV2MockThis m = new MerchandiseV2MockThis();
             m.name = "商品" + i;
             m.count = 200;
             m.purchasePrice = Math.random() * 200;
@@ -32,17 +29,12 @@ public class RunLittleSuperMarketMainApp {
             all[i] = m;
         }
 
-        System.out.println("LittleSuperMarket的对象是：" + littleSuperMarket);
         System.out.println("下面请利润最高的商品自我介绍：");
-        MerchandiseV2 m = littleSuperMarket.getBiggestProfitMerchandise();
-        m.describe();
-        System.out.println("利润最高的MerchandiseV2对象是：" + m);
-        if (!m.hasEnoughCountFor(500)) {
-            System.out.println("补充库存");
-            int toBeAdded = 500;
-            littleSuperMarket.incomingSum -= toBeAdded * m.purchasePrice;
-            m.addCount(toBeAdded);
-        }
+        MerchandiseV2MockThis m = littleSuperMarket.getBiggestProfitMerchandise(littleSuperMarket);
+        m.describe(m);
+        System.out.println("调用makeEnoughFor");
+        m.makeEnoughFor(m, 205);
+        m.describe(m);
 
     }
 }

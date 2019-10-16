@@ -3,7 +3,7 @@ package Lesson48_this;
 import Lesson48_this.superMarket.LittleSuperMarket;
 import Lesson48_this.superMarket.MerchandiseV2;
 
-public class RunLittleSuperMarketMainApp {
+public class RunLittleSuperMarketAppMainOneByOne {
     public static void main(String[] args) {
         // 创建一个小超市类
         LittleSuperMarket littleSuperMarket = new LittleSuperMarket();
@@ -32,17 +32,12 @@ public class RunLittleSuperMarketMainApp {
             all[i] = m;
         }
 
-        System.out.println("LittleSuperMarket的对象是：" + littleSuperMarket);
         System.out.println("下面请利润最高的商品自我介绍：");
         MerchandiseV2 m = littleSuperMarket.getBiggestProfitMerchandise();
         m.describe();
-        System.out.println("利润最高的MerchandiseV2对象是：" + m);
-        if (!m.hasEnoughCountFor(500)) {
-            System.out.println("补充库存");
-            int toBeAdded = 500;
-            littleSuperMarket.incomingSum -= toBeAdded * m.purchasePrice;
-            m.addCount(toBeAdded);
-        }
-
+        System.out.println("调用makeEnoughForOneByOne");
+        // m.makeEnoughFor(900);
+        m.makeEnoughForOneByOne(210);
+        m.describe();
     }
 }

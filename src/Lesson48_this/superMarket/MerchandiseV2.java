@@ -39,19 +39,13 @@ public class MerchandiseV2 {
         return this.count >= count;
     }
 
-    public void testMethod(){
-        count = 10;
-        System.out.println(this.count);
 
-        this.count = 20;
-        System.out.println(count);
-
-        name = "名字";
-        System.out.println(this.name);
-
-        this.name = "狗头";
-        System.out.println(name);
-
+    public void makeEnoughForOneByOne(int count) {
+        boolean hasEnough = this.hasEnoughCountFor(count);
+        if (!hasEnough) {
+            this.addCount(1);
+            makeEnoughForOneByOne(count);
+        }
     }
 
 }
