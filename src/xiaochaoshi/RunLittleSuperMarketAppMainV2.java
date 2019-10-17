@@ -5,7 +5,14 @@ import xiaochaoshi.supermarket.MerchandiseV2;
 
 import java.util.Scanner;
 
+/**
+ * @author
+ */
 public class RunLittleSuperMarketAppMainV2 {
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         LittleSuperMarket littleSuperMarket = new LittleSuperMarket();
 

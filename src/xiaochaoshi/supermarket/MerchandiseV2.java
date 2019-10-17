@@ -50,6 +50,13 @@ public class MerchandiseV2 {
     }
 
     // >> TODO 一个方法可以有多个参数，多个参数之间用逗号隔开
+
+    /**
+     *
+     * @param countToBuy
+     * @param printLeft
+     * @return
+     */
     public double buyAndPrintLeft(int countToBuy, boolean printLeft) {
         if (count < countToBuy) {
             System.out.println("商品库存不足");

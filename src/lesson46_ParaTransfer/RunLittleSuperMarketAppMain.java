@@ -3,6 +3,12 @@ package lesson46_ParaTransfer;
 import lesson46_ParaTransfer.superMarket.LittleSuperMarket;
 import lesson46_ParaTransfer.superMarket.MerchandiseV2;
 
+
+/**
+ * @author
+ *
+ *
+ */
 public class RunLittleSuperMarketAppMain {
     public static void main(String[] args) {
         // 创建一个小超市类
@@ -115,7 +121,6 @@ public class RunLittleSuperMarketAppMain {
         System.out.println("能改变m本身的gift吗？能改变m的soldPrice吗？");
 
         m.describe();
-
 
     }
 }

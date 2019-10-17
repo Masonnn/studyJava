@@ -1,5 +1,9 @@
 package xiaochaoshi.supermarket;
 
+
+/**
+ * @author
+ */
 public class LittleSuperMarket {
     public String superMarketName;
     public String address;
@@ -24,6 +28,12 @@ public class LittleSuperMarket {
 //        return curr;
 //    }
 //
+
+    /**
+     * Test
+     *
+     * @return
+     */
     public MerchandiseV2 getBiggestProfitMerchandise() {
         MerchandiseV2 curr = null;
 
