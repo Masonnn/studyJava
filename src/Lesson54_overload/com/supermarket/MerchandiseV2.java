@@ -29,28 +29,41 @@ public class MerchandiseV2 {
         return profit;
     }
 
+    // >> TODO 方法调用的时候，参数就不必完全类型一样，实参数可以自动类型转换成形参类型即可
+    public double buyDouble(double count){
+        System.out.println("buyDouble(double)被调用了");
 
-    // TODO 为了使用方便，买一个，不传参数
-    public double buyOne() {
-        int count = 1;
-        if (this.count < count) {
+        if (this.count < count){
             return -1;
         }
-        this.count--;
-        return count * soldPrice;
+        this.count -= count;
+        double totalCost = count * soldPrice;
+        return totalCost;
     }
 
-    // TODO 买好几个
-    public double buyCount(int count) {
+    // TODO 论斤卖的商品，数量是double。我们把count成员变量改成double类型
+    public double buy(double count){
+        System.out.println("buy(double)被调用了");
         if (this.count < count) {
             return -1;
         }
         this.count -= count;
-        return count * soldPrice;
+        double totalCost = count * soldPrice;
+        return totalCost;
     }
 
-    // TODO VIP会员 购买九五折
-    public double buyAsVIP(int count, boolean isVIP) {
+    public double buy() {
+        System.out.println("buy()被调用了");
+        return buy(1);
+    }
+
+    public double buy(int count) {
+        System.out.println("buy(int)被调用了");
+        return buy(count, false);
+    }
+
+    public double buy(int count, boolean isVIP) {
+        System.out.println("buy(int,boolean)被调用了");
         if (this.count < count) {
             return -1;
         }
