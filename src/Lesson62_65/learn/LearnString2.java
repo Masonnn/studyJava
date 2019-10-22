@@ -16,12 +16,18 @@ public class LearnString2 {
             System.out.println(s[i]);
         }
 
-        System.out.println("=======================");
+        System.out.println("===========indexOf============");
         // 求第一个匹配符号的index
         int indexOf = content.indexOf("_");
         System.out.println(indexOf);
-
         System.out.println(content.substring(indexOf +1,content.length()));
+
+
+        System.out.println("===========lastIndexOf============");
+
+        int lastIndexOf = content.lastIndexOf("_");
+        System.out.println(lastIndexOf);
+        System.out.println(content.substring(0,lastIndexOf));
 
         System.out.println("=======================");
         System.out.println(content.contains("apple"));
