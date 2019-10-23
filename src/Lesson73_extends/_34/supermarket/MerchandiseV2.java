@@ -1,4 +1,4 @@
-package Lesson73_extends._34;
+package Lesson73_extends._34.supermarket;
 
 public class MerchandiseV2 {
 
