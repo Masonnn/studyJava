@@ -12,6 +12,9 @@ public class Phone extends MerchandiseV2 {
     private static int MAX_BUY_ONE_ORDER = 5;
 
     public Phone(String name, String id, int count, double soldPrice, double purchasePrice, double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
+
+        // >> TODO 可以认为，创建子类对象的时候，也就同时创建了一个隐藏的父类对象
+
         this.screenSize = screenSize;
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;
@@ -19,6 +22,7 @@ public class Phone extends MerchandiseV2 {
         this.brand = brand;
         this.os = os;
 
+        // >> TODO 所以，才能够setName，对name属性进行操作。
         this.setName(name);
         this.setId(id);
         this.setCount(count);
@@ -38,20 +42,15 @@ public class Phone extends MerchandiseV2 {
     // >> TODO 题外话：属性是联动的，可能是有特殊意义的。
     //    TODO 所以直接给属性赋值是危险的，因为没有办法检查新的值是否有意义，也没法对这个修改做联动的修改
 
+
     public double buy(int count) {
 
         if (count > MAX_BUY_ONE_ORDER) {
             System.out.println("购买失败，手机一次最多只能买" + MAX_BUY_ONE_ORDER + "个");
             return -2;
         }
-        if (this.count < count) {
-            System.out.println("购买失败，库存不足");
-            return -1;
-        }
-        this.count -= count;
-        double cost = count * soldPrice;
-        System.out.println("购买成功，花费为" + cost);
-        return cost;
+        // >> TODO 使用super可以调用父类的方法和属性（当然必须满足访问控制符的控制）
+        return super.buy(count);
     }
 
     // >> TODO 返回值必须一样，不是类型兼容，而是必须一摸一样。
@@ -84,29 +83,54 @@ public class Phone extends MerchandiseV2 {
 
     // TODO 根据我们对覆盖的理解，Phone类里的describePhone方法应该叫做describe
     // TODO 同样的，我们想哟调用父类里的describe方法，试试看？
-//    public void describePhone() {
-//        System.out.println("此手机商品属性如下");
-//        describe();
-//        System.out.println("手机厂商为" + brand + "；系统为" + os + "；硬件配置如下：\n" +
-//                "屏幕：" + screenSize + "寸\n" +
-//                "cpu主频" + cpuHZ + " GHz\n" +
-//                "内存" + memoryG + "Gb\n" +
-//                "存储空间" + storageG + "Gb");
-//    }
-
-
     public void describe() {
         System.out.println("此手机商品属性如下");
-        System.out.println("商品名字叫做" + name + "，id是" + id + "。 商品售价是" + soldPrice
-                + "。商品进价是" + purchasePrice + "。商品库存量是" + count +
-                "。销售一个的毛利润是" + (soldPrice - purchasePrice));
-//        describe();
+        super.describe();
         System.out.println("手机厂商为" + brand + "；系统为" + os + "；硬件配置如下：\n" +
                 "屏幕：" + screenSize + "寸\n" +
                 "cpu主频" + cpuHZ + " GHz\n" +
                 "内存" + memoryG + "Gb\n" +
                 "存储空间" + storageG + "Gb");
     }
+
+
+    // >> TODO super是子类和父类交流的桥梁，但是并不是父类的引用
+//     >> TODO 所以，super和this自引用不一样，不是简单可以模拟的（可以模拟的话不就成了组合了吗）
+//    public MerchandiseV2 getParent(){
+//        return super;
+//    }
+
+    public Phone getThisPhone() {
+        return this;
+    }
+
+    // >> TODO 使用super可以调用父类的public属性，但是super不是一个引用。
+    public void accessParentProps() {
+        System.out.println("父类里的name属性" + super.name);
+    }
+
+
+    public void useSuper() {
+        // >> TODO super的用法就像是一个父类的引用。它是继承的一部分，像组合的那部分，但不是全部
+        super.describe();
+        super.buy(66);
+        System.out.println("父类里的count属性：" + super.count);
+    }
+
+
+//    public void describe() {
+//        System.out.println("此手机商品属性如下");
+//        System.out.println("商品名字叫做" + name + "，id是" + id + "。 商品售价是" + soldPrice
+//                + "。商品进价是" + purchasePrice + "。商品库存量是" + count +
+//                "。销售一个的毛利润是" + (soldPrice - purchasePrice));
+////        describe();
+//        System.out.println("手机厂商为" + brand + "；系统为" + os + "；硬件配置如下：\n" +
+//                "屏幕：" + screenSize + "寸\n" +
+//                "cpu主频" + cpuHZ + " GHz\n" +
+//                "内存" + memoryG + "Gb\n" +
+//                "存储空间" + storageG + "Gb");
+//    }
+//
 
 
     public double getScreenSize() {
