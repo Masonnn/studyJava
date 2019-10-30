@@ -1,4 +1,4 @@
-package xiaochaoshi.supermarket;
+package _xiaochaoshi.supermarket;
 
 
 /**

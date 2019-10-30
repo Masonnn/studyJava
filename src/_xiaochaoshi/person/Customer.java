@@ -1,4 +1,4 @@
-package xiaochaoshi.person;
+package _xiaochaoshi.person;
 
 public class Customer {
     public String name;

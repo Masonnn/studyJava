@@ -1,8 +1,8 @@
-package xiaochaoshi;
+package _xiaochaoshi;
 
-import xiaochaoshi.person.Customer;
-import xiaochaoshi.supermarket.LittleSuperMarket;
-import xiaochaoshi.supermarket.MerchandiseV2;
+import _xiaochaoshi.person.Customer;
+import _xiaochaoshi.supermarket.LittleSuperMarket;
+import _xiaochaoshi.supermarket.MerchandiseV2;
 
 import java.util.Scanner;
 
