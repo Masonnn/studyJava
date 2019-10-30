@@ -49,6 +49,10 @@ public class Phone extends MerchandiseV2 {
     }
 
 
+    public String getName() {
+        return this.brand + ": " + this.os + ": " + super.getName();
+    }
+
     /**
      *
      */

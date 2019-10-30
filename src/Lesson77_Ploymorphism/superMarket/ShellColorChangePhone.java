@@ -43,4 +43,9 @@ public class ShellColorChangePhone extends Phone {
         return profit + profit * 0.1;
     }
 
+    @Override
+    public String getName(){
+        return super.getName()+"-山寨机";
+    }
+
 }

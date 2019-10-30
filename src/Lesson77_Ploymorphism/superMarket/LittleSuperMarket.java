@@ -1,7 +1,5 @@
 package Lesson77_Ploymorphism.superMarket;
 
-import _xiaochaoshi.supermarket.Merchandise;
-
 public class LittleSuperMarket {
     private String superMarketName;
     private String address;

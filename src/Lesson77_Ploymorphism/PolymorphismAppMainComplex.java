@@ -1,6 +1,7 @@
 package Lesson77_Ploymorphism;
 
 import Lesson77_Ploymorphism.superMarket.LittleSuperMarket;
+import Lesson77_Ploymorphism.superMarket.Phone;
 
 public class PolymorphismAppMainComplex {
     public static void main(String[] args) {
@@ -17,7 +18,13 @@ public class PolymorphismAppMainComplex {
         superMarket.getMerchandiseOf(10).describe();
         System.out.println();
         superMarket.getMerchandiseOf(100).describe();
+        System.out.println();
+        Phone phone = new Phone("ShaJi","101",10,999,800,3.5,1.8,2,8,"AiYa","iOS");
 
+        System.out.println(superMarket.getMerchandiseOf(100).getName());
+
+        System.out.println();
+        System.out.println(phone.getBrand());
         // >> TODO 总结：无论一个方法是使用哪个引用被调用的，"它都是在实际的对象上执行的"。执行的任何一个方法，都是这个对象所属的类的方法。
         //    TODO 如果没有，就去父类找，再没有，就去父类的父类找，依次寻找，直到找到。
 
