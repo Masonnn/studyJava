@@ -144,7 +144,6 @@ public class LittleSuperMarket {
      * @return
      */
 
-
     public MerchandiseV2 getMerchandiseOf(int merchandiseIndex) {
         if (merchandiseIndex < 0 || merchandiseIndex >= merchandises.length) {
             return null;
