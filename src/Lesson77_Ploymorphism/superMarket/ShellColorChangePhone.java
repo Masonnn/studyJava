@@ -48,4 +48,25 @@ public class ShellColorChangePhone extends Phone {
         return super.getName()+"-山寨机";
     }
 
+    /**
+     * 覆盖(override)父类buy方法
+     *
+     * @param count
+     * @return
+     */
+    @Override
+    public double buy(int count){
+        System.out.println("ShellColorChangePhone里的buy(int count)");
+        if (count <2){
+            System.out.println("买一送一了解一下，不单卖哦！");
+            return -1;
+        }
+        return super.buy(count);
+    }
+
+    public static void staticNoOverride(){
+        System.out.println("staticNoOverride in ShellColorChangePhone");
+    }
+
+
 }

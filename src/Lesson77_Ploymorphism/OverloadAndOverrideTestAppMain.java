@@ -14,6 +14,6 @@ public class OverloadAndOverrideTestAppMain {
         // TODO 好巧不巧，这个对象老复杂了，是个ShellColorChangePhone对象，好戏上演了
         // TODO， 分别用true， 1， 3， 6做参数，运行结果是什么，为什么？
 
-        m.buy(6);
+        m.buy(true);
     }
 }

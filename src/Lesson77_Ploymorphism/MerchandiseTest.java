@@ -1,8 +1,8 @@
 package Lesson77_Ploymorphism;
 
-import Lesson73_extends._36.supermarket.Phone;
-import Lesson73_extends._36.supermarket.ShellColorChangePhone;
 import Lesson77_Ploymorphism.superMarket.MerchandiseV2;
+import Lesson77_Ploymorphism.superMarket.Phone;
+import Lesson77_Ploymorphism.superMarket.ShellColorChangePhone;
 
 public class MerchandiseTest {
     // TODO 之前重载的时候，参数是用的自定义类型。现在理解了父类和子类的引用赋值关系，重载又多了一层复杂性
@@ -28,9 +28,9 @@ public class MerchandiseTest {
         System.out.println("参数为MerchandiseV2的testMerchandiseOverloadNotExactlyMatchType 被调用了");
     }
 
-    public void testMerchandiseOverloadNotExactlyMatchType(Phone ph) {
-        System.out.println("参数为Phone的testMerchandiseOverloadNotExactlyMatchType 被调用了");
-    }
+//    public void testMerchandiseOverloadNotExactlyMatchType(Phone ph) {
+//        System.out.println("参数为Phone的testMerchandiseOverloadNotExactlyMatchType 被调用了");
+//    }
 
 
     public void testMerchandiseOverloadNotExactlyMatchType(String str){

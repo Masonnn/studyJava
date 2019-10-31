@@ -37,12 +37,13 @@ public class MerchandiseV2 {
     }
 
     /**
-     * buy方法
+     * buy方法, 传int类型参数
      *
      * @param count
      * @return
      */
     public double buy(int count) {
+        System.out.println("Merchandise里的buy(int count)");
         if (this.count < count) {
             System.out.println("库存不足");
             return -1;
@@ -53,6 +54,20 @@ public class MerchandiseV2 {
         return cost;
     }
 
+    /**
+     * buy方法重载（overload），传boolean类型
+     *
+     * @param reallyBuy
+     * @return
+     */
+    public double buy(boolean reallyBuy) {
+        System.out.println("Merchandise里的buy(boolean reallyBuy)");
+        if (reallyBuy) {
+            return this.buy(1);
+        } else {
+            return -1;
+        }
+    }
 
     public String getName() {
         return name;

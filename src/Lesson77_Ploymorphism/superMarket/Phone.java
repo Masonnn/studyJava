@@ -35,7 +35,7 @@ public class Phone extends MerchandiseV2 {
     }
 
     /**
-     * 覆盖父类buy方法
+     * 覆盖（override）父类buy方法
      *
      * @param count
      * @return
