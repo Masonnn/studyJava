@@ -1,10 +1,10 @@
 package Lesson77_Ploymorphism.superMarket;
 
 public class Phone extends MerchandiseV2 {
-    private double screenSize;
-    private double cpuHZ;
-    private int memoryG;
-    private int storageG;
+    protected double screenSize;
+    protected double cpuHZ;
+    int memoryG;
+    int storageG;
     private String brand;
     private String os;
     private static int MAX_BUY_ONE_ORDER = 5;
@@ -23,7 +23,9 @@ public class Phone extends MerchandiseV2 {
      * @param os
      */
 
-    public Phone(String name, String id, int count, double soldPrice, double purchasePrice, double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
+    // >> TODO 构造方法可以是protected，但是如果是private，子类就不可以覆盖了。
+    //    TODO 如果父类只有一个private的构造方法，相当于这个类不能有子类
+    protected Phone(String name, String id, int count, double soldPrice, double purchasePrice, double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
         super(name, id, count, soldPrice, purchasePrice);
 
         this.screenSize = screenSize;
@@ -46,6 +48,11 @@ public class Phone extends MerchandiseV2 {
             return -2;
         }
         return super.buy(count);
+    }
+
+
+    protected String getNameOfPhone() {
+        return this.brand + ": " + this.os + "：" + super.getName();
     }
 
 
