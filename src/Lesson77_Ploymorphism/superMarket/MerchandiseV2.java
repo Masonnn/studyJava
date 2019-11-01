@@ -108,4 +108,8 @@ public class MerchandiseV2 {
     public void setSoldPrice(double soldPrice) {
         this.soldPrice = soldPrice;
     }
+
+    public static void staticMethod() {
+        System.out.println("staticMethod in MerchandiseV2");
+    }
 }

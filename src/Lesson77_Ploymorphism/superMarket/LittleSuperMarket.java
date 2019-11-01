@@ -23,6 +23,8 @@ public class LittleSuperMarket {
         this.address = address;
         this.parkingCount = parkingCount;
 
+        MerchandiseV2 giftForPhone = new MerchandiseV2("手机赠品-64G存储卡","GIFT001",999,60,30);
+
         merchandises = new MerchandiseV2[merchandiseCount];
         for (int i = 0; i < merchandises.length; i++) {
             MerchandiseV2 m = null;
@@ -33,6 +35,7 @@ public class LittleSuperMarket {
                         count,
                         1999,
                         999,
+                        giftForPhone,
                         4.5,
                         3.5,
                         4,
@@ -47,6 +50,7 @@ public class LittleSuperMarket {
                         count,
                         1999,
                         999,
+                        giftForPhone,
                         4.5,
                         3.5,
                         4,

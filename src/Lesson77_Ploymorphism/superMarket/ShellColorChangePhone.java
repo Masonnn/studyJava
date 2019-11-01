@@ -17,8 +17,10 @@ public class ShellColorChangePhone extends Phone {
      * @param brand
      * @param os
      */
-    public ShellColorChangePhone(String name, String id, int count, double soldPrice, double purchasePrice, double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
-        super(name, id, count, soldPrice, purchasePrice, screenSize, cpuHZ, memoryG, storageG, brand, os);
+    public ShellColorChangePhone(String name, String id, int count, double soldPrice, double purchasePrice, MerchandiseV2 gift, double screenSize,
+                                 double cpuHZ, int memoryG, int storageG, String brand, String os) {
+
+        super(name, id, count, soldPrice, purchasePrice, gift, screenSize, cpuHZ, memoryG, storageG, brand, os);
         enableShellColorChange = false;
 
     }
@@ -44,8 +46,8 @@ public class ShellColorChangePhone extends Phone {
     }
 
     @Override
-    public String getName(){
-        return super.getName()+"-山寨机";
+    public String getName() {
+        return super.getName() + "-山寨机";
     }
 
     /**
@@ -55,18 +57,20 @@ public class ShellColorChangePhone extends Phone {
      * @return
      */
     @Override
-    public double buy(int count){
+    public double buy(int count) {
         System.out.println("ShellColorChangePhone里的buy(int count)");
-        if (count <2){
+        if (count < 2) {
             System.out.println("买一送一了解一下，不单卖哦！");
             return -1;
         }
         return super.buy(count);
     }
 
-    public static void staticNoOverride(){
+    public static void staticNoOverride() {
         System.out.println("staticNoOverride in ShellColorChangePhone");
     }
 
-
+    public static void staticMethod() {
+        System.out.println("staticMethod in ShellColorChangePhone");
+    }
 }

@@ -1,13 +1,19 @@
 package Lesson77_Ploymorphism.superMarket;
 
+// >> TODO 用final 修饰类看看？
 public class Phone extends MerchandiseV2 {
+
+    // >> TODO 用 final 修饰成员变量看看？
     protected double screenSize;
     protected double cpuHZ;
     int memoryG;
     int storageG;
     private String brand;
     private String os;
-    private static int MAX_BUY_ONE_ORDER = 5;
+    // >> TODO 用 final 修饰静态变量看看？
+    private final static int MAX_BUY_ONE_ORDER = 5;
+    // >> TODO 用 final 修饰引用，最难理解
+    private final MerchandiseV2 gift;
 
     /**
      * @param name
@@ -23,9 +29,15 @@ public class Phone extends MerchandiseV2 {
      * @param os
      */
 
+//    static {
+//        MAX_BUY_ONE_ORDER = 6;
+//    }
+//
+
     // >> TODO 构造方法可以是protected，但是如果是private，子类就不可以覆盖了。
     //    TODO 如果父类只有一个private的构造方法，相当于这个类不能有子类
-    protected Phone(String name, String id, int count, double soldPrice, double purchasePrice, double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
+    protected Phone(String name, String id, int count, double soldPrice, double purchasePrice, MerchandiseV2 gift,
+                    double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
         super(name, id, count, soldPrice, purchasePrice);
 
         this.screenSize = screenSize;
@@ -34,6 +46,7 @@ public class Phone extends MerchandiseV2 {
         this.storageG = storageG;
         this.brand = brand;
         this.os = os;
+        this.gift = gift;
     }
 
     /**
@@ -72,6 +85,14 @@ public class Phone extends MerchandiseV2 {
                 "内存" + memoryG + "Gb\n" +
                 "存储空间" + storageG + "Gb"
         );
+    }
+
+    public static int getMaxBuyOneOrder() {
+        return MAX_BUY_ONE_ORDER;
+    }
+
+    public MerchandiseV2 getGift() {
+        return gift;
     }
 
     public double getScreenSize() {
@@ -120,5 +141,9 @@ public class Phone extends MerchandiseV2 {
 
     public void setOs(String os) {
         this.os = os;
+    }
+
+    public static void staticMethod() {
+        System.out.println("staticMethod in Phone");
     }
 }
