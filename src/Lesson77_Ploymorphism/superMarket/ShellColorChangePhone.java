@@ -39,6 +39,19 @@ public class ShellColorChangePhone extends Phone {
         System.out.println("壳色随着屏幕色变的功能开启状态" + enableShellColorChange);
     }
 
+
+    @Override
+    public String toString() {
+        return "ShellColorChangePhone{" +
+                "enableShellColorChange=" + enableShellColorChange +
+                ", screenSize=" + screenSize +
+                ", cpuHZ=" + cpuHZ +
+                ", memoryG=" + memoryG +
+                ", storageG=" + storageG +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     @Override
     public double calculateProfit() {
         double profit = super.calculateProfit();

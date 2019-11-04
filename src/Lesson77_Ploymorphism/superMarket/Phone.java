@@ -39,7 +39,6 @@ public class Phone extends MerchandiseV2 {
     public Phone(String name, String id, int count, double soldPrice, double purchasePrice, MerchandiseV2 gift,
                     double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
         super(name, id, count, soldPrice, purchasePrice);
-
         this.screenSize = screenSize;
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;
@@ -64,14 +63,14 @@ public class Phone extends MerchandiseV2 {
     }
 
 
-//    protected String getNameOfPhone() {
+    //    protected String getNameOfPhone() {
 //        return this.brand + ": " + this.os + "：" + super.getName();
 //    }
 //
 
-//    public String getName() {
-//        return this.brand + ": " + this.os + ": " + super.getName();
-//    }
+    public String getName() {
+        return this.brand + ": " + this.os + ": " + super.getName();
+    }
 
     /**
      *
@@ -85,6 +84,21 @@ public class Phone extends MerchandiseV2 {
                 "内存" + memoryG + "Gb\n" +
                 "存储空间" + storageG + "Gb"
         );
+    }
+
+
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "screenSize=" + screenSize +
+                ", cpuHZ=" + cpuHZ +
+                ", memoryG=" + memoryG +
+                ", storageG=" + storageG +
+                ", brand='" + brand + '\'' +
+                ", os='" + os + '\'' +
+                ", gift=" + gift +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     public static int getMaxBuyOneOrder() {

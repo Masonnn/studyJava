@@ -72,6 +72,17 @@ public class MerchandiseV2 {
         }
     }
 
+    @Override
+    public String toString() {
+        return "MerchandiseV2{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", count=" + count +
+                ", soldPrice=" + soldPrice +
+                ", purchasePrice=" + purchasePrice +
+                '}';
+    }
+
     // >> TODO hashCode 和 equals是我们最常覆盖的两个方法
     // >> TODO 覆盖的原则是，equals为true，hashCode就应该相等。这是一种约定俗成的规范
     // >> TODO 即equals为true是hashCode相等的充分非必要条件，hashCode相等是equals为true的必要不充分条件
