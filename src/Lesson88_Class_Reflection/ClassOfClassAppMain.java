@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class ClassOfClassAppMain {
+
     public static void main(String... args) throws NoSuchFieldException, NoSuchMethodException {
         LittleSuperMarket superMarket = new LittleSuperMarket("大卖场",
                 "世纪大道1号", 500, 600, 100);
@@ -24,13 +25,13 @@ public class ClassOfClassAppMain {
 
 
         // TODO 通过一个类的Class实例，可以获取一个类所有的信息，包括成员变量，方法，等
-
+//        Field countField = clazz.getField("count");
+//        Field nameField = clazz.getField("count");
         Field countField = clazz.getField("count");
-        Field nameField = clazz.getField("count");
 
-        // >> TODO 变长参数和它的等价形式
+        // >> TODO 变长参数(动态参数) 和它的等价形式
 //        Method equalsMethod = clazz.getMethod("equals", Object.class);
-        Method buyMethod = clazz.getMethod("buy", int.class, String.class);
+        Method buyMethod = clazz.getMethod("buy", int.class);
         Method equalsMethod = clazz.getMethod("equals", Object.class);
 
 
