@@ -36,7 +36,7 @@ public class Phone extends MerchandiseV2 {
 
     // >> TODO 构造方法可以是protected，但是如果是private，子类就不可以覆盖了。
     //    TODO 如果父类只有一个private的构造方法，相当于这个类不能有子类
-    protected Phone(String name, String id, int count, double soldPrice, double purchasePrice, MerchandiseV2 gift,
+    public Phone(String name, String id, int count, double soldPrice, double purchasePrice, MerchandiseV2 gift,
                     double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
         super(name, id, count, soldPrice, purchasePrice);
 
@@ -64,14 +64,14 @@ public class Phone extends MerchandiseV2 {
     }
 
 
-    protected String getNameOfPhone() {
-        return this.brand + ": " + this.os + "：" + super.getName();
-    }
+//    protected String getNameOfPhone() {
+//        return this.brand + ": " + this.os + "：" + super.getName();
+//    }
+//
 
-
-    public String getName() {
-        return this.brand + ": " + this.os + ": " + super.getName();
-    }
+//    public String getName() {
+//        return this.brand + ": " + this.os + ": " + super.getName();
+//    }
 
     /**
      *
