@@ -34,6 +34,5 @@ public class ClassOfClassAppMain {
         Method buyMethod = clazz.getMethod("buy", int.class);
         Method equalsMethod = clazz.getMethod("equals", Object.class);
 
-
     }
 }

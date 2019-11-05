@@ -11,10 +11,10 @@ public class Phone extends MerchandiseV2{
     private static int MAX_BUY_ONE_ORDER = 5;
 
     public Phone(
-            String name, String id, int count, double soldPrice, double purchasePrice,
+            String name, String id, int count, double soldPrice, double purchasePrice, Category category,
             double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os
     ) {
-        super(name, id, count, soldPrice, purchasePrice);
+        super(name, id, count, soldPrice, purchasePrice,category);
         this.screenSize = screenSize;
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;

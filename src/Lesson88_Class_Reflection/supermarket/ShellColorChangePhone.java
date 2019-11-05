@@ -1,11 +1,11 @@
 package Lesson88_Class_Reflection.supermarket;
 
-public class ShellColorChangePhone extends Phone{
+public class ShellColorChangePhone extends Phone {
     private boolean enableShellColorChange;
 
-    public ShellColorChangePhone(String name, String id, int count, double soldPrice, double purchasePrice,
+    public ShellColorChangePhone(String name, String id, int count, double soldPrice, double purchasePrice, Category category,
                                  double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
-        super(name, id, count, soldPrice, purchasePrice, screenSize, cpuHZ, memoryG, storageG, brand, os);
+        super(name, id, count, soldPrice, purchasePrice, category, screenSize, cpuHZ, memoryG, storageG, brand, os);
         enableShellColorChange = false;
     }
 

@@ -28,9 +28,9 @@ public class ReflectionAppMain {
         System.out.println(countField.get(m100));
         countField.set(m100, 999);
         System.out.println(countField.get(m100));
-        System.out.println(m100.count);
+//        System.out.println(m100.count);
 
-//        printFields(clazz);
+        printFields(clazz);
 //
 //        Field field = clazz.getField("STATIC_MEMBER");
 //        System.out.println(field.get(null));

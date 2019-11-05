@@ -23,6 +23,9 @@ public class LittleSuperMarket {
         this.address = address;
         this.parkingCount = parkingCount;
 
+        Category[] all = Category.values();
+        int allCategory = all.length;
+
         merchandises = new MerchandiseV2[merchandiseCount];
         for (int i = 0; i < merchandises.length; i++) {
             // 创建手机，手机壳变色手机，和普通商品，都放在商品数组里
@@ -34,6 +37,7 @@ public class LittleSuperMarket {
                         count,
                         1999,
                         999,
+                        all[i % allCategory],
                         4.5,
                         3.5,
                         4,
@@ -48,6 +52,7 @@ public class LittleSuperMarket {
                         count,
                         1999,
                         999,
+                        all[i % allCategory],
                         4.5,
                         3.5,
                         4,
@@ -61,8 +66,9 @@ public class LittleSuperMarket {
                         "商品" + i,
                         "ID" + i,
                         count,
-                        1999,
-                        999
+                        purchasePrice * (1 + Math.random()),
+                        purchasePrice,
+                        all[i % allCategory]
                 );
             }
             // 用创建的商品，给商品数组的第i个引用赋值，all和小超市的商品数组引用指向的是同一个数组对象
