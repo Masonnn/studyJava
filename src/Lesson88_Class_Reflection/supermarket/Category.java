@@ -26,7 +26,7 @@ public enum Category {
 
     @Override
     public String toString() {
-        return "Category{" +
+        return "CategoryTry{" +
                 "id=" + id +
                 '}';
     }

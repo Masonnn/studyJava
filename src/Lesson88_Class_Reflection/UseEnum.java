@@ -19,7 +19,7 @@ public class UseEnum {
         System.out.println();
         // >> TODO 根据名字获取枚举
         System.out.println(Category.valueOf("FOOD"));
-//        System.out.println(Category.valueOf("food"));
+//        System.out.println(CategoryTry.valueOf("food"));
 
         Scanner in = new Scanner(System.in);
         System.out.println("请输入枚举的名字：");
