@@ -33,4 +33,5 @@ public enum CategoryTry {
                 ", mark='" + mark + '\'' +
                 '}';
     }
+
 }
