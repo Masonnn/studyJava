@@ -1,12 +1,12 @@
 package Lesson93_Interface.superMarket;
 
+import java.util.Date;
+
 // >> TODO 抽象类用abstract修饰，抽象类可以继承别的类或者抽象类，也可以实现接口
 // >> TODO 抽象类可以有抽象方法，抽象方法可以来自实现的接口，也可以自己定义
 // >> TODO 抽象类不可以被实例化
 // >> TODO 抽象类也可以没有抽象方法，没有抽象方法的抽象类，也不可以被实例化。
 // >> TODO 简单来说，抽象类就两点特殊：1）被abstract修饰，可以有抽象方法 2）不可以被实例化
-import java.util.Date;
-
 public abstract class AbstractExpireDateMerchandise extends MerchandiseV2 implements ExpireDateMerchandise {
 
     private Date produceDate;
@@ -34,8 +34,6 @@ public abstract class AbstractExpireDateMerchandise extends MerchandiseV2 implem
 
     // >> TODO @ 是Java中的注解（annotation），后面我们会详细讲述
     // >> TODO @Override代表此方法覆盖了父类的方法/实现了继承的接口的方法，否则会报错
-
-
     @Override
     public boolean notExpireInDays(int days) {
         return daysBeforeExpire() > 0;
