@@ -6,7 +6,6 @@ import java.util.Date;
 //    TODO 1）默默继承，相当于把这部分代码，拷贝到了当前类当中
 //    TODO 2）重新声明此方法为abstract，相当于把这部分代码拒之门外，但是有abstract方法，也就是类必须是抽象的
 //    TODO 3）覆盖，重新实现
-
 public class GamePointCard extends MerchandiseV2 implements ExpireDateMerchandise, VirtualMerchandise{
     private Date produceDate;
     private Date expirationDate;

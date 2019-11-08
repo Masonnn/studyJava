@@ -2,6 +2,7 @@ package Lesson96_MethodWithBodyInInterface.supermarket;
 
 import java.util.Date;
 
+// >> TODO Phone如果也实现了ExpireDateMerchandise接口，类似的东西还要再做一遍，怎么办？
 public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
     private Date produceDate;
     private Date expirationDate;
