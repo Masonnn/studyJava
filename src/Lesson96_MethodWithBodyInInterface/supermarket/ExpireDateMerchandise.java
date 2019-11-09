@@ -46,7 +46,6 @@ public interface ExpireDateMerchandise {
 
     // >> TODO 接口中可以有私有方法，不需要用default修饰
     // >> TODO 接口里的私有方法，可以认为是代码直接插入到使用的地方
-
     private long daysBeforeExpire() {
         long expireMS = getExpireDate().getTime();
         long left = expireMS - System.currentTimeMillis();
@@ -66,6 +65,5 @@ public interface ExpireDateMerchandise {
         // 返回值是long，是根据left的类型决定的
         return left / (24 * 3600 * 1000);
     }
-
 
 }
