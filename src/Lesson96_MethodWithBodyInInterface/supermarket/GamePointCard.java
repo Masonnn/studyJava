@@ -30,4 +30,10 @@ public class GamePointCard extends MerchandiseV2 implements ExpireDateMerchandis
     public double actualValueNow(double leftDatePercentage) {
         return super.getSoldPrice();
     }
+
+    @Override
+    public void testDuplicatedMethod(){
+
+    }
+
 }

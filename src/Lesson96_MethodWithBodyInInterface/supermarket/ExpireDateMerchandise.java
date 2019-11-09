@@ -2,10 +2,15 @@ package Lesson96_MethodWithBodyInInterface.supermarket;
 
 import java.util.Date;
 
-// >> TODO 缺省的实现方法，用default修饰，可以有方法体
+// >> TODO 有方法的接口，并不是多继承。接口不可以继承类，这一点就打破了
+// >> TODO 同样，接口不可以声明实例变量。其方法是有限制的，比如这个接口，因为不能声明实例变量，
+// >> TODO 只能通过getProducedDate和getExpireDate，间接通过实现接口的类，获取数据
+// >> TODO 和抽象方法不同，如果一个类实现了两个接口，并且两个接口里有相同的缺省方法，编译器会报错
 public interface ExpireDateMerchandise {
 
     // >> TODO 缺省的实现方法，用default修饰，可以有方法体
+    // >> TODO 缺省方法，也有this自引用，但是只能调用接口里的方法，或者继承的接口里的方法
+    // >> TODO 因为能new出实例来的，肯定是实现了所有方法的，this自引用就是指向那个对象，所以使用起来不会有问题
 
     /**
      * 截止到当前，商品的保质期天数是否超过传递的天数
@@ -27,8 +32,6 @@ public interface ExpireDateMerchandise {
      */
     public abstract Date getProducedDate();
 
-
-
     /**
      * @return 截止到当前，剩余保质期还剩下总保质期长度的百分比
      */
@@ -47,23 +50,22 @@ public interface ExpireDateMerchandise {
     // >> TODO 接口中可以有私有方法，不需要用default修饰
     // >> TODO 接口里的私有方法，可以认为是代码直接插入到使用的地方
     private long daysBeforeExpire() {
-        long expireMS = getExpireDate().getTime();
-        long left = expireMS - System.currentTimeMillis();
-        if (left < 0) {
-            return -1;
-        }
-        // 返回值是long，是根据left的类型决定的
-        return left / (24 * 3600 * 1000);
+        return daysBetween(System.currentTimeMillis(), getExpireDate().getTime());
     }
 
     private long daysAfterProduce() {
-        long produceMS = getProducedDate().getTime();
-        long left = System.currentTimeMillis() - produceMS;
-        if (left < 0) {
-            return -1;
-        }
-        // 返回值是long，是根据left的类型决定的
-        return left / (24 * 3600 * 1000);
+        return daysBetween(getProducedDate().getTime(), System.currentTimeMillis());
     }
 
+    public static long daysBetween(long from, long to) {
+        long gap = to - from;
+
+        if (gap < 0) {
+            return -1;
+        }
+        return gap / (24 * 3600 * 1000);
+    }
+
+    default void testDuplicatedMethod() {
+    }
 }
