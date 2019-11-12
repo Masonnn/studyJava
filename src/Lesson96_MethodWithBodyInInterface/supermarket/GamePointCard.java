@@ -16,6 +16,9 @@ public class GamePointCard extends MerchandiseV2 implements ExpireDateMerchandis
         this.expirationDate = expirationDate;
     }
 
+//    @Override
+//    public abstract boolean notExpireInDays(int days);
+
     @Override
     public Date getExpireDate() {
         return produceDate;
