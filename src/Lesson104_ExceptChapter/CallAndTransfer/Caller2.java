@@ -1,5 +1,7 @@
 package Lesson104_ExceptChapter.CallAndTransfer;
 
+import Lesson104_ExceptChapter.CallAndTransfer.myexceptions.MyException;
+
 public class Caller2 {
     Caller3 caller3 = new Caller3();
 
@@ -10,7 +12,7 @@ public class Caller2 {
 
     }
 
-    public void call3Exception() throws ClassNotFoundException {
+    public void call3Exception() throws ClassNotFoundException, MyException {
         System.out.println("Caller2.call3Exception开始");
 
         caller3.callThrowException();

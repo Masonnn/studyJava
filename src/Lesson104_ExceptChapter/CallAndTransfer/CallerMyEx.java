@@ -1,6 +1,6 @@
 package Lesson104_ExceptChapter.CallAndTransfer;
 
-import Lesson104_ExceptChapter.CallAndTransfer.myexception.MyException;
+import Lesson104_ExceptChapter.CallAndTransfer.myexceptions.MyException;
 
 public class CallerMyEx {
     public static void main(String[] args) throws MyException {

@@ -1,4 +1,4 @@
-package Lesson104_ExceptChapter.CallAndTransfer.myexception;
+package Lesson104_ExceptChapter.CallAndTransfer.myexceptions;
 
 public class MyException extends Exception {
     public MyException() {

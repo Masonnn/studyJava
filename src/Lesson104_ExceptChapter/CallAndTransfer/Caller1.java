@@ -1,5 +1,7 @@
 package Lesson104_ExceptChapter.CallAndTransfer;
 
+import Lesson104_ExceptChapter.CallAndTransfer.myexceptions.MyException;
+
 public class Caller1 {
     Caller2 caller2 = new Caller2();
 
@@ -11,7 +13,7 @@ public class Caller1 {
         System.out.println("Caller1.call2RTException 结束");
     }
 
-    public void call2Exception() throws ClassNotFoundException {
+    public void call2Exception() throws ClassNotFoundException, MyException {
         System.out.println("Caller1.call2Exception 开始");
 
         try {
