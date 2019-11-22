@@ -22,7 +22,7 @@ public class CallStack {
     private static void m0(int i) {
         System.out.println("m0\t" + i + "开始");
         callStack(i);
-        System.out.println("m0\t" + i + "开始");
+        System.out.println("m0\t" + i + "结束");
     }
 
     private static void m1(int i) {
