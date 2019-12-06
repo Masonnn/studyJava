@@ -1,6 +1,6 @@
 package supermarket.interfaces;
 
-import java.util.Arrays;
+import java.util.Date;
 
 public class ShoppingCart {
     private Merchandise[] buy;
@@ -49,11 +49,22 @@ public class ShoppingCart {
 
     @Override
     public String toString() {
-        return "ShoppingCart{" +
-                "buy=" + Arrays.toString(buy) +
-                ", count=" + Arrays.toString(count) +
-                ", curr=" + curr +
-                ", max=" + max +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("=======================\n");
+        sb.append("购物时间：").append(new Date()).append("\n");
+        int pos = -1;
+        for (Merchandise m : buy) {
+            pos++;
+            if (m == null) {
+                continue;
+            }
+            sb.append(m.getCategory().name()).append("\t").append(m.getName()).append("\t")
+                    .append(count[pos]).append("\t").append(m.getPurchasePrice() * count[pos]).append("\n");
+        }
+
+        sb.append("应付总额为：").append(calculateOriginCost()).append("\n");
+        sb.append("====================");
+        return sb.toString();
+
     }
 }
