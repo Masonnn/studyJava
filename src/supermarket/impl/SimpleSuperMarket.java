@@ -4,6 +4,8 @@ import supermarket.interfaces.Category;
 import supermarket.interfaces.Merchandise;
 import supermarket.interfaces.SuperMarket;
 
+import static supermarket.util.ShoppingUtil.output;
+
 public class SimpleSuperMarket implements SuperMarket {
 
     private String name = "无名";

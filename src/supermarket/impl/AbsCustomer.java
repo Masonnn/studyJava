@@ -2,6 +2,7 @@ package supermarket.impl;
 
 import supermarket.interfaces.Category;
 import supermarket.interfaces.Customer;
+import supermarket.interfaces.Merchandise;
 import supermarket.interfaces.ShoppingCart;
 
 import static supermarket.util.ShoppingUtil.getRandomCategory;
@@ -15,12 +16,11 @@ public class AbsCustomer implements Customer {
 
     public static final int DEFAULT_GUANG_COUNT = 5;
 
-    public AbsCustomer(Category shouldBuy, String custId, int guangCount) {
+    public AbsCustomer(String custId, Category shouldBuy, int guangCount) {
         this.shouldBuy = shouldBuy;
-        this.custId = custId;
         this.guangCount = guangCount;
+        this.custId = custId;
     }
-
 
     public int getGuangCount() {
         return guangCount;
@@ -61,6 +61,11 @@ public class AbsCustomer implements Customer {
         return shouldBuy;
     }
 
+    /**
+     * 先看必须买的，没有必须买的就随便看看
+     *
+     * @return 想要购买的商品种类
+     */
 
     @Override
     public Category chooseCategory() {
@@ -72,7 +77,14 @@ public class AbsCustomer implements Customer {
     }
 
     @Override
+    public int buyMerchandise(Merchandise merchandise) {
+        return 0;
+    }
+
+    @Override
     public double getMoneySpent() {
         return moneySpent;
     }
+
+
 }

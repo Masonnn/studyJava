@@ -2,10 +2,12 @@ package supermarket.impl;
 
 import supermarket.interfaces.*;
 
+import static supermarket.util.ShoppingUtil.output;
+
 public class SimpleShopman implements Shopman {
     private SuperMarket superMarket;
 
-    private SimpleShopman(SuperMarket superMarket) {
+    public SimpleShopman(SuperMarket superMarket) {
         this.superMarket = superMarket;
     }
 
@@ -61,7 +63,7 @@ public class SimpleShopman implements Shopman {
 
         superMarket.addEarnedMoney(moneyEarned);
 
-        output("顾客" + customer.getCustId() + "购物清单如下：")；
+        output("顾客" + customer.getCustId() + "购物清单如下：");
         output(shoppingCart.toString());
         output("优惠金额为： " + savedMoney);
         output("实付金额为： " + moneyEarned);

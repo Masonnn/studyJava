@@ -5,10 +5,10 @@ package supermarket.interfaces;
  */
 public enum Category {
     FOOD(10, 300),
-    COOK(200,200),
-    SNACK(5,100),
-    CLOTHES(200,100),
-    ELECTRIC(200,10000);
+    COOK(200, 200),
+    SNACK(5, 100),
+    CLOTHES(200, 100),
+    ELECTRIC(200, 10000);
 
 
     int lowerPrice;
