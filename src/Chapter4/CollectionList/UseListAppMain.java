@@ -1,7 +1,7 @@
-package CollectionList;
+package Chapter4.CollectionList;
 
-import CollectionList.mylist.MyArrayList;
-import CollectionList.mylist.MyLinkedList;
+import Chapter4.CollectionList.mylist.MyLinkedList;
+import Chapter4.CollectionList.mylist.MyArrayList;
 
 import java.util.ArrayList;
 import java.util.Collection;

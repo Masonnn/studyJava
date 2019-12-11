@@ -1,4 +1,4 @@
-package CollectionSet;
+package Chapter4.CollectionSet;
 
 import java.util.ArrayList;
 import java.util.Collection;

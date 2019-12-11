@@ -1,4 +1,4 @@
-package CollectionList.mylist;
+package Chapter4.CollectionList.mylist;
 
 import java.util.*;
 //import java.util.function.Consumer;
