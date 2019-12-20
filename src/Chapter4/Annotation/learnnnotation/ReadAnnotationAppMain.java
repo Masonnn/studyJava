@@ -12,6 +12,7 @@ public class ReadAnnotationAppMain {
             System.out.println(annotation.annotationType());
         }
 
+        // TODO 读取到注解的内容，可以根据注解的内容，作为相应功能的配置，来实现相应的功能
         PrimaryProperty primaryPropertyAnnotation = method.getAnnotation(PrimaryProperty.class);
         System.out.println(primaryPropertyAnnotation.abc());
         System.out.println(primaryPropertyAnnotation.defalultValue());
