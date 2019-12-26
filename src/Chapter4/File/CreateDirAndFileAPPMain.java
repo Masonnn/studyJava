@@ -39,7 +39,7 @@ public class CreateDirAndFileAPPMain {
 
         // TODO 删除文件夹的前提是文件夹是空的，否则将删除失败
         if (deleteDir) {
-            System.out.println("删除文件夹：" + newDir.delete());
+            System.out.println("删除文件夹" + newDir.delete());
         }
     }
 
@@ -55,6 +55,7 @@ public class CreateDirAndFileAPPMain {
             }
         }
     }
+
 
     private static String renameFiles(File newDir, String fileName) {
         System.out.println("请输入新的文件名的前缀：");
@@ -73,7 +74,7 @@ public class CreateDirAndFileAPPMain {
         String fileName = scanner.next().trim();
 
         for (int i = 0; i < 20; i++) {
-            File f = new File(newDir, fileName + i + ".text");
+            File f = new File(newDir, fileName + i + ".txt");
             System.out.println("创建文件" + f.getName() + ": " + f.createNewFile());
         }
         return fileName;
