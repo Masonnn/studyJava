@@ -1,4 +1,4 @@
-package Chapter4.NetWork.learnSocket;
+package Chapter4.NetWork;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -14,7 +14,6 @@ public class ShowSocketClasses {
 
 
         ss.getLocalSocketAddress();
-
 
     }
 }
