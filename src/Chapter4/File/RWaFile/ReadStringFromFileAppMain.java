@@ -16,7 +16,7 @@ public class ReadStringFromFileAppMain {
 
         classicWay(sourceFile);
 
-//        coolerWay(sourceFile);
+        coolerWay(sourceFile);
     }
 
     private static void classicWay(File sourceFile) throws IOException {
@@ -45,16 +45,19 @@ public class ReadStringFromFileAppMain {
 
     }
 
-//    private static void coolerWay(File sourceFile) {
-//        System.out.println("---------666的处理方式-------------");
-//
-//        try (
-//
-//                ){
-//
-//        }
-//
-//    }
+    private static void coolerWay(File sourceFile) {
+        System.out.println("---------666的处理方式-------------");
+        try (
+                FileInputStream fis = new FileInputStream(sourceFile);
+                InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+                BufferedReader reader = new BufferedReader(isr)
+        ) {
+            reader.lines().map(String::trim).map(String::toUpperCase).forEach(System.out::println);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
 
 
 }
