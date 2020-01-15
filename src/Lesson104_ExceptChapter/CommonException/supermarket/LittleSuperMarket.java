@@ -1,4 +1,4 @@
-package Lesson93_Interface.superMarket;
+package Lesson104_ExceptChapter.CommonException.supermarket;
 
 public class LittleSuperMarket {
     public String superMarketName;
@@ -136,4 +136,5 @@ public class LittleSuperMarket {
         incomingSum -= toBeSpent;
         return true;
     }
+
 }

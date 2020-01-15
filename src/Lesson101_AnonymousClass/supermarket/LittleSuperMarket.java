@@ -1,4 +1,4 @@
-package Lesson93_Interface.superMarket;
+package Lesson101_AnonymousClass.supermarket;
 
 public class LittleSuperMarket {
     public String superMarketName;

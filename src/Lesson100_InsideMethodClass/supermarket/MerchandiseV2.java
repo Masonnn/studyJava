@@ -1,4 +1,4 @@
-package Lesson93_Interface.superMarket;
+package Lesson100_InsideMethodClass.supermarket;
 
 public class MerchandiseV2 {
     public String name;

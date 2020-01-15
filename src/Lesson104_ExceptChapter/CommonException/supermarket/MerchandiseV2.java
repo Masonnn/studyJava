@@ -1,6 +1,7 @@
-package Lesson93_Interface.superMarket;
+package Lesson104_ExceptChapter.CommonException.supermarket;
 
 public class MerchandiseV2 {
+
     public String name;
     public String id;
     public int count;

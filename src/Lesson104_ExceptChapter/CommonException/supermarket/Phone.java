@@ -1,9 +1,6 @@
-package Lesson93_Interface.superMarket;
+package Lesson104_ExceptChapter.CommonException.supermarket;
 
-import java.util.Date;
-// >> TODO Phone如果也实现了ExpireDateMerchandise接口，类似的东西还要再做一遍，怎么办？
-public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
-
+public class Phone extends MerchandiseV2 {
     // 给Phone增加新的属性和方法
     private double screenSize;
     private double cpuHZ;
@@ -12,9 +9,11 @@ public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
     private String brand;
     private String os;
 
-    public Phone(String name, String id, int count, double soldPrice, double purchasePrice,
-                 double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
-//        super(name, id, count, soldPrice, purchasePrice);
+    public Phone(
+            String name, String id, int count, double soldPrice, double purchasePrice,
+            double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os
+    ) {
+
         this.screenSize = screenSize;
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;
@@ -38,6 +37,10 @@ public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
                 "内存" + memoryG + "Gb\n" +
                 "存储空间" + storageG + "Gb\n");
 
+    }
+
+    public boolean meetCondition() {
+        return true;
     }
 
     public double getScreenSize() {
@@ -86,30 +89,5 @@ public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
 
     public void setOs(String os) {
         this.os = os;
-    }
-
-    @Override
-    public boolean notExpireInDays(int days) {
-        return false;
-    }
-
-    @Override
-    public Date getProducedDate() {
-        return null;
-    }
-
-    @Override
-    public Date getExpireDate() {
-        return null;
-    }
-
-    @Override
-    public double leftDatePercentage() {
-        return 0;
-    }
-
-    @Override
-    public double actualValueNow(double leftDatePercentage) {
-        return 0;
     }
 }

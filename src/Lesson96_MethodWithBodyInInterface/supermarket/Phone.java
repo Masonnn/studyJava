@@ -1,8 +1,11 @@
-package Lesson93_Interface.superMarket;
+package Lesson96_MethodWithBodyInInterface.supermarket;
 
 import java.util.Date;
+
 // >> TODO Phone如果也实现了ExpireDateMerchandise接口，类似的东西还要再做一遍，怎么办？
 public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
+    private Date produceDate;
+    private Date expirationDate;
 
     // 给Phone增加新的属性和方法
     private double screenSize;
@@ -12,32 +15,50 @@ public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
     private String brand;
     private String os;
 
-    public Phone(String name, String id, int count, double soldPrice, double purchasePrice,
-                 double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os) {
-//        super(name, id, count, soldPrice, purchasePrice);
+    public Phone(
+            String name, String id, int count, double soldPrice, double purchasePrice,
+            double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os,
+            Date produceDate, Date expirationDate
+    ) {
+        super(name, id, count, soldPrice, purchasePrice);
+        this.produceDate = produceDate;
+        this.expirationDate = expirationDate;
         this.screenSize = screenSize;
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;
         this.storageG = storageG;
         this.brand = brand;
         this.os = os;
-
-        this.setName(name);
-        this.setId(id);
-        this.setCount(count);
-        this.setSoldPrice(soldPrice);
-        this.setPurchasePrice(purchasePrice);
     }
+
+    @Override
+    public Date getProducedDate() {
+        return produceDate;
+    }
+
+    @Override
+    public Date getExpireDate() {
+        return expirationDate;
+    }
+
+    @Override
+    public double actualValueNow(double leftDatePercentage) {
+        return soldPrice * (leftDatePercentage + 0.5);
+    }
+
 
     public void describePhone() {
         System.out.println("此手机商品属性如下");
-        describe();
         System.out.println("手机厂商为" + brand + "；系统为" + os + "；硬件配置如下：\n" +
                 "屏幕：" + screenSize + "寸\n" +
                 "cpu主频" + cpuHZ + " GHz\n" +
                 "内存" + memoryG + "Gb\n" +
                 "存储空间" + storageG + "Gb\n");
 
+    }
+
+    public boolean meetCondition() {
+        return true;
     }
 
     public double getScreenSize() {
@@ -86,30 +107,5 @@ public class Phone extends MerchandiseV2 implements ExpireDateMerchandise {
 
     public void setOs(String os) {
         this.os = os;
-    }
-
-    @Override
-    public boolean notExpireInDays(int days) {
-        return false;
-    }
-
-    @Override
-    public Date getProducedDate() {
-        return null;
-    }
-
-    @Override
-    public Date getExpireDate() {
-        return null;
-    }
-
-    @Override
-    public double leftDatePercentage() {
-        return 0;
-    }
-
-    @Override
-    public double actualValueNow(double leftDatePercentage) {
-        return 0;
     }
 }

@@ -1,4 +1,4 @@
-package Lesson93_Interface.superMarket;
+package Lesson96_MethodWithBodyInInterface.supermarket;
 
 public class MerchandiseV2 {
     public String name;
@@ -90,4 +90,5 @@ public class MerchandiseV2 {
     public void setPurchasePrice(double purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
+
 }
