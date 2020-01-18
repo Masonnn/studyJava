@@ -17,10 +17,10 @@ public class InterruptThreadAppMain {
         List<Thread> threads = new ArrayList<>();
 
         for (int i = 1; i <= 1; i++) {
-            Thread thread = new Thread(new PrintStoryRunnable(TEXT, 200 * i), "我的线程-" + i);
-            //            Thread thread = new Thread(new NotHandleInterrupt(TimeUnit.SECONDS.toMillis(8)), "我的线程-" + i);
+//            Thread thread = new Thread(new PrintStoryRunnable(TEXT, 200 * i), "我的线程-" + i);
+            Thread thread = new Thread(new NotHandleInterrupt(TimeUnit.SECONDS.toMillis(8)), "我的线程-" + i);
             thread.start();
-            //            thread.stop();
+//            thread.stop();
             threads.add(thread);
         }
 
