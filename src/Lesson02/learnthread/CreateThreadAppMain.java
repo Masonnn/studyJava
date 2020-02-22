@@ -15,7 +15,7 @@ public class CreateThreadAppMain {
             // TODO Runnable接口里的run是线程执行的方法，执行完毕，线程就结束了
             // TODO 理解代码是在线程里被执行的，同样的代码可以被多个线程执行。
             // TODO 暂停一下 Java ，看看有多少线程，每个线程的名字等信息
-            Thread thread = new Thread((Runnable) new PrintStoryRunnable(TEXT, 200 * 2), "我的线程-" + i);
+            Thread thread = new Thread((Runnable) new PrintStoryRunnable(TEXT, 200), "我的线程-" + i);
             // TODO 创建好线程之后，如果要启动线程，必须调用start方法，注意不是run方法
             thread.start();
         }
