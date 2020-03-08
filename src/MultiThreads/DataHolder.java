@@ -12,9 +12,10 @@ public class DataHolder {
         number += delta;
     }
 
+    //    public synchronized
     public void changeSyncBlock(long delta) {
         int abc = 99;
-        synchronized (lockObj) {
+        synchronized (this) {
             number += delta;
         }
         int cde = 987;

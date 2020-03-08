@@ -14,10 +14,10 @@ public class ChangeData implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < loopCount; i++) {
-            dataHolder.change(delta);
-//                DataHolder.printStatic();
+//            dataHolder.change(delta);
+            DataHolder.changesStatic(delta);
         }
-        dataHolder.print();
-//        DataHolder.printStatic();
+//        dataHolder.print();
+        DataHolder.printStatic();
     }
 }
