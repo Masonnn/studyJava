@@ -1,74 +1,52 @@
 import org.junit.Test;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.ArrayList;
 
 public class TestSolution {
-    @Test
-    public ListNode reverseList(ListNode head) {
+    private TreeNode ans;
 
+    public TestSolution() {
+        this.ans = null;
+    }
 
-        ListNode pre = null;
-        ListNode cur = head;
-        ListNode temp = null;
-        while (cur != null) {
-            temp = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = temp;
-        }
-        return pre;
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        this.dfs(root, p, q);
+        return this.ans;
+
     }
 
 
-    //  Definition for singly-linked list.
-    public class ListNode {
-        int val;
-        ListNode next;
+    public boolean dfs(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) return false;
+        boolean lSon = dfs(root.left, p, q);
+        boolean rSon = dfs(root.right, p, q);
 
-        ListNode() {
+        if ((lSon && rSon) || ((root.val == p.val || root.val == q.val)) && (lSon || rSon)) {
+            ans = root;
         }
 
-        ListNode(int val) {
-            this.val = val;
-        }
+        return lSon || rSon || (root.val == p.val || root.val == q.val);
 
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
 
     public static void main(String[] args) {
-
         TestSolution testSolution = new TestSolution();
 
-//        ListNode head = null;
-//        ListNode second = null;
-//        ListNode third = null;
-//        ListNode fouth = null;
-//        ListNode fifth = null;
-//        ListNode tail = null;
+//        TreeNode treeNode = new ArrayList(){3,5,1,6,2,0,8,null,null,7,4};
 //
-//
-//        head.val = 1;
-//        head.next = second;
-//
-//        second.val = 2;
-//        second.next = third;
-//
-//        third.val = 3;
-//        third.next = fouth;
-//
-//        fouth.val = 4;
-//        fouth.next = fifth;
-//
-//        fifth.val = 5;
-//        fifth.next = tail;
+//        System.out.println(testSolution.lowestCommonAncestor(treeNode);
 
-        System.out.println();
-//        testSolution.reverseList(head);
 
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
     }
 }

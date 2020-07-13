@@ -16,7 +16,7 @@ public class LinkedListProblems {
         ListNode l2 = new ListNode(3, new ListNode(4, new ListNode(5, null)));
 
 
-        System.out.println(testSolution.mergeTwoLists(l1, l2));
+//        System.out.println(testSolution.mergeTwoLists(l1, l2));
 
     }
 }
