@@ -1,4 +1,4 @@
-package algo;
+package algo.sorting;
 
 public class QuickSort {
     public static void main(String[] args) {
@@ -13,6 +13,7 @@ public class QuickSort {
     }
 
     private static void quickSort(int[] array, int begin, int end) {
+        // terminator
         if (end <= begin) return;
 
         int pivot = partition(array, begin, end);
@@ -37,5 +38,4 @@ public class QuickSort {
         a[counter] = temp;
         return counter;
     }
-
 }

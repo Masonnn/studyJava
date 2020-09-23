@@ -1,4 +1,4 @@
-package algo;
+package algo.sorting;
 
 public class BubbleSort {
     public static void main(String[] args) {
